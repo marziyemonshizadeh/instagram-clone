@@ -1,0 +1,38 @@
+/* upload input */
+.change-profile-input-box {
+  position: relative;
+  /* height: 500px; */
+  border: 1px solid var(--primary-color);
+  /* padding: 20px; */
+}
+/* .change-profile-input-box {
+  width: 500px;
+} */
+.change-profile-input-box::before {
+  position: absolute;
+  top: -8px;
+  background: var(--white);
+  padding: 0 10px;
+}
+/* .change-profile-input-box::before {
+  content: "پروفایل";
+  left: 50%;
+  transform: translateX(-50%);
+} */
+.upload-profile-input-label{
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.upload-profile-input-label input {
+  display: none;
+}
+.change-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  outline: 1px solid var(--primary-color);
+}

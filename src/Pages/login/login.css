@@ -1,0 +1,26 @@
+/* *{
+    margin: 0;
+    padding: 0;
+        background-color: #FAFAFA;
+
+} */
+/* .clr{
+    background-color: #FAFAFA;
+    height: auto;
+} */
+.dark{
+    color: black;
+}
+.cart-style{
+    background-color: white;
+    border: 2px solid #E6E6E6;
+}
+.form-style{
+    background-color: #FAFAFA;
+    border: 1px solid #E6E6E6;
+}
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }

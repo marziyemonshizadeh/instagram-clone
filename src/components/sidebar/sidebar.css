@@ -1,0 +1,12 @@
+.sidebarItems:hover{
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+.sidebar{
+    /* max-width: 200px; */
+    min-width: 20px;
+}
+.icons{
+  width: 25px;
+  height: 25px;
+}

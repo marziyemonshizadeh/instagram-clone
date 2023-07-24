@@ -1,0 +1,16 @@
+.articles_txt{
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    font-size: 1rem;
+    align-items: center;
+    grid-column-gap: .6rem;
+    /* padding:0  5rem; */
+    margin: 1rem;
+  }
+    .articles_txt::after,
+    .articles_txt::before{
+        content: "";
+        height: .01rem;
+        display: block;
+        background-color: #C8CCD1;
+    }

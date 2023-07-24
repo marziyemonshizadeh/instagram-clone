@@ -1,0 +1,26 @@
+.parallax {
+  /* Set a specific height */
+  min-height: 500px; 
+  
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.img1{
+  /* The image used */
+  background-image: url("../../assets/b2.jpg");
+  /* background-image: linear-gradient((rgba(0, 0, 0, 0.659),.9),black); */
+  /* clip-path */
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+
+  }
+  .img2{
+    background-image:url("../../assets/Instagram-headquarters-iStock-1002488562.jpg");
+    clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
+  }
+  /* .img3{
+    background-image: url("https://www.rtlnieuws.nl/sites/default/files/content/images/2021/07/27/instagram.jpg?itok=lvf660Rt&offsetX=0&offsetY=15&cropWidth=1024&cropHeight=576&width=2048&height=1152&impolicy=dynamic");
+    clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
+  } */
