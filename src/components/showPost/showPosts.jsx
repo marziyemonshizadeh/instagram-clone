@@ -10,7 +10,7 @@ export default function Home() {
     console.log('post:',posts);
 
     useEffect(() => {
-        dispatch(getPostsFromServer("http://localhost:3001/posts"))
+        dispatch(getPostsFromServer("/posts"))
     },[])
     return (
       <>
