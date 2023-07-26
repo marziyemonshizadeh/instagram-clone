@@ -161,3 +161,7 @@ a:hover {
 .card:hover {
   box-shadow: 2px 2px 12px 0 rgba(0,0,0,0.2);
 }
+.swal-footer{
+  display: flex;
+  justify-content: center;
+}
