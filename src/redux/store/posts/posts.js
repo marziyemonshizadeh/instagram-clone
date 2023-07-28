@@ -23,17 +23,13 @@ const slice = createSlice({
     },
 
     extraReducers: (builder) => {
-        builder.addCase(getPostsFromServer.fulfilled, (state,action)=>{
-                    // console.log("state fulfilled :",state);
-                    // console.log("action fulfilled:",action.payload);
-                    state.push(...action.payload);
-
-                },),
+        builder.addCase(getPostsFromServer.fulfilled, (state,action)=>action.payload),
+        
         builder.addCase(removePostsFromServer.fulfilled, (state,action)=>{
-                    console.log("state fulfilled :",state);
-                    console.log("action fulfilled:",action.payload);
-                    // state.push(...action.payload);
-
+                    console.log("state remove fulfilled :",state);
+                    console.log("action remove fulfilled:",action);
+                    const newPosts = state.filter(post => post.id !== action.payload.meta)
+                    return newPosts;
                 },)
             }
 })

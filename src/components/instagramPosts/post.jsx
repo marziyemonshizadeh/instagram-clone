@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { getPostCommentsFromServer } from '../../redux/store/posts/comments';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getPostCommentsFromServer } from '../../redux/store/posts/comments';
 
-import apiRequests from '../../Services/axios/Configs/configs';
+// import apiRequests from '../../Services/axios/Configs/configs';
 import LazyImg from '../lazyLoadImg/lazyLoadImg';
 
 import { BsPatchCheckFill } from 'react-icons/bs';
@@ -13,6 +13,9 @@ import { MdCancel } from 'react-icons/md';
 import { RiBookmarkFill, RiBookmarkLine } from 'react-icons/ri';
 import { TfiMoreAlt } from 'react-icons/tfi';
 
+import { useDispatch } from 'react-redux';
+import swal from 'sweetalert';
+import { removePostsFromServer } from '../../redux/store/posts/posts';
 import './post.css';
   
 function Post({userName,caption,imgUrl,id,cmnt}) {
@@ -21,31 +24,57 @@ function Post({userName,caption,imgUrl,id,cmnt}) {
     const [save,setSave] = useState(true);
     const [newComment, setNewComment] = useState('');
     const [showCommentInput, setShowCommentInput] = useState(false);
-    const com = cmnt;
-    //redux
-    const postComments = useSelector((state) => state.comments)
+
     const dispatch = useDispatch();
+    const handleDeletePost =( ) => {
+        swal({
+            title: "confirm delete posts ???",
+            icon: "warning",
+            buttons: ["no", "yes!"],
+        }).then((result) => {
+            if(result){
+                dispatch(removePostsFromServer(id))  
+                swal({
+                    title: "The post has been successfully deleted:)",
+                    icon: "success",
+                    buttons: "ok",
+                })
+            }
+        })
+        // {
+        //     "userName": "Marzieh",
+        //     "caption": "milano",
+        //     "imgUrl": "https://galeriemagazine.com/wp-content/uploads/2019/04/Lubar-1920x1200.jpg",
+        //     "id": 1
+        //   },
+        // dispatch(removePostsFromServer(id))
+    }
+    // const com = cmnt;
+    //redux
+    // const postComments = useSelector((state) => state.comments)
+    // const dispatch = useDispatch();
     // console.log('postComments:',postComments);
 
     // useEffect(() => {
     //     dispatch(getPostCommentsFromServer("http://localhost:3001/comments"))
     // },[])
-    const [comments, setComments] = useState();
+    // const [comments, setComments] = useState();
 
 
 
     // show all comments
-    useEffect(() => {
-        getAllComments();
-        dispatch(getPostCommentsFromServer("http://localhost:3001/comments"))
-    },[])
+    // useEffect(() => {
+    //     getAllComments();
+    //     dispatch(getPostCommentsFromServer("http://localhost:3001/comments"))
+    //     console.log('i am post use effect ! i am render');
+    // },[])
 
-    const getAllComments=()=>{
-        apiRequests.get("/comments")
-        .then(res => setComments(res.data))
-        .catch((err) => {
-            console.log(err)})
-    }
+    // const getAllComments=()=>{
+    //     apiRequests.get("/comments")
+    //     .then(res => setComments(res.data))
+    //     .catch((err) => {
+    //         console.log(err)})
+    // }
     return (
         <div className="card mx-md-auto  mt-2">
             {/* header */}
@@ -63,14 +92,13 @@ function Post({userName,caption,imgUrl,id,cmnt}) {
                         <TfiMoreAlt className='me-2'/>
                     </button>
                     <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="#">Delete</a></li>
-                        <li><a className="dropdown-item" href="#">Edit</a></li>
+                        <li><a className="dropdown-item" href="#" onClick={handleDeletePost}>Delete</a></li>
                     </ul>
                 </div>
             </header>
-            {com.map(i=>{
+            {/* {com.map(i=>{
                    <p>hi {i.userName}</p>
-                })} 
+                })}  */}
              {/* image */}
              <LazyImg src={imgUrl} alt="post"/>
 
@@ -110,9 +138,9 @@ function Post({userName,caption,imgUrl,id,cmnt}) {
                         </li>
                     ))}
                     </ul>  */}
-                    <div>{userName}: comments post {id} = {cmnt.map(i => {
+                    {/* <div>{userName}: comments post {id} = {cmnt.map(i => {
                         console.log(`post ${id}=`,i.body);
-                    })}</div>
+                    })}</div> */}
                 {/* add comments */}
                 <div className={showCommentInput? 'd-block' : 'd-none'}>
                     <input type="text"  className="form-control mt-2"
