@@ -1,9 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Sidebar from '../../components/sidebar/sidebar';
+import Sidebar from '../sidebar/sidebar';
 
-import './homePage.css';
+import './mainStructure.css';
  
 function Main() {
   return (
