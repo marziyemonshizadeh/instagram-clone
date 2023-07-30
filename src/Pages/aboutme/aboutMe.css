@@ -1,6 +1,6 @@
 .parallax {
   /* Set a specific height */
-  min-height: 500px; 
+  min-height: 450px; 
   
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -10,17 +10,37 @@
 }
 .img1{
   /* The image used */
-  background-image: url("../../assets/b2.jpg");
+  background-image: url("https://history-computer.com/wp-content/uploads/2022/04/shutterstock_1942284766-scaled.jpg");
   /* background-image: linear-gradient((rgba(0, 0, 0, 0.659),.9),black); */
   /* clip-path */
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
 
   }
-  .img2{
-    background-image:url("../../assets/Instagram-headquarters-iStock-1002488562.jpg");
-    clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
-  }
-  /* .img3{
-    background-image: url("https://www.rtlnieuws.nl/sites/default/files/content/images/2021/07/27/instagram.jpg?itok=lvf660Rt&offsetX=0&offsetY=15&cropWidth=1024&cropHeight=576&width=2048&height=1152&impolicy=dynamic");
-    clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
-  } */
+
+  .titles {
+    color: #fff;
+		/* font-size: 92px;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif; */
+		background: linear-gradient(to right,#FFEE5C 10%, #E817B3 50%, #b503e2 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	}
+
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+  
