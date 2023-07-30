@@ -1,21 +1,23 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
 
-import Sidebar from '../sidebar/sidebar';
+import ScrollToTop from "../scrollToTop/scrollToTop";
+import Sidebar from "../sidebar/sidebar";
 
-import './mainStructure.css';
- 
+import "./mainStructure.css";
+
 function Main() {
   return (
-     <div className='row w-100'>
-          <section className='col-2'>
-             <Sidebar/>
-          </section>  
-          <section className='col-10 mb-3'>
-             <Outlet/> 
-          </section>
-     </div>
-  )
+    <div className="row overflow-hidden w-100">
+      <section className="col-2">
+        <Sidebar />
+      </section>
+      <section className="col-10 mb-3 overflow-hidden">
+        <Outlet />
+        <ScrollToTop />
+      </section>
+    </div>
+  );
 }
 
-export default Main
+export default Main;
