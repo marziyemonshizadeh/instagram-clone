@@ -1,19 +1,53 @@
 import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Story from "../../components/story/story";
-
 import { BsPatchCheckFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
+import Story from "../../components/story/story";
+import { addPostsFromServer } from "../../redux/store/posts/posts";
+
 import "./create.css";
+
 const Create = () => {
+  let userName = "m";
+  let caption = "m";
+  let imgUrl =
+    "https://media.sproutsocial.com/uploads/2022/05/How-to-post-on-instagram-from-pc.jpg";
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const [image, setImage] = useState();
+
   const handleClick = () => {
     inputRef.current.click();
   };
   const handleImageChange = (e) => {
-    // console.log("e.target.files[0]", e.target.files[0]);
     setImage(e.target.files[0]);
+  };
+  const handleSend = () => {
+    swal({
+      title: "Are you sure you want to post this?",
+      icon: "warning",
+      buttons: ["no", "yes!"],
+    }).then((result) => {
+      if (result) {
+        dispatch(
+          addPostsFromServer({
+            userName,
+            caption,
+            imgUrl,
+          })
+        );
+        swal({
+          title: "The post has been successfully add:)",
+          icon: "success",
+          buttons: "ok",
+        });
+        console.log(URL.createObjectURL(image));
+        setTimeout(() => navigate("/main"), 3000);
+      }
+    });
   };
   return (
     <>
@@ -73,7 +107,7 @@ const Create = () => {
             <button
               type="button"
               className="btn btn-success"
-              onClick={() => navigate("/main")}
+              onClick={handleSend}
             >
               Send
             </button>
