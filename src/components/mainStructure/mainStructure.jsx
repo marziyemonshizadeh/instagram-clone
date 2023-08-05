@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
+import ScrollToDown from "../scrollToDown/scrollToDown";
 import ScrollToTop from "../scrollToTop/scrollToTop";
 import Sidebar from "../sidebar/sidebar";
 
@@ -14,6 +15,7 @@ function Main() {
       </section>
       <section className="col-10 mb-3 overflow-hidden">
         <Outlet />
+        <ScrollToDown />
         <ScrollToTop />
       </section>
     </div>
