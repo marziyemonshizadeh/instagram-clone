@@ -20,9 +20,9 @@ export const removePostsFromServer = createAsyncThunk(
 );
 export const addPostsFromServer = createAsyncThunk(
   "posts/addPostsFromServer",
-  async (userName, caption, imgUrl) => {
+  async (values) => {
     return apiRequests
-      .post("/posts/", userName, caption, imgUrl)
+      .post("/posts/", values)
       .then((res) => {
         console.log(res);
       })
