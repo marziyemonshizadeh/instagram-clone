@@ -1,0 +1,28 @@
+.card{
+    max-width: 1024px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.heart{
+    fill:red;
+}
+.cancel{
+  fill: rgb(108, 18, 18);
+}
+.success{
+  fill: green;
+}
+.zoom-in-zoom-out{
+    animation:zoom-in-zoom-out 0.5s ease;
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
