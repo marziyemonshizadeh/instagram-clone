@@ -15,7 +15,7 @@ function scrollToTop() {
   }, []);
   const scrollDown = () => {
     window.scrollTo({
-      top: 10000,
+      top: document.documentElement.scrollHeight,
       behavior: "smooth",
     });
   };
