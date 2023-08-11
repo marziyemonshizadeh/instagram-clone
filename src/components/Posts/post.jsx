@@ -16,6 +16,10 @@ import {
 import { removePostsFromServer } from "../../redux/store/posts/posts";
 import LazyImg from "../lazyLoadImg/lazyLoadImg";
 
+import {
+  addLikesFromServer,
+  removeLikesFromServer,
+} from "../../redux/store/posts/likes";
 import "./post.css";
 
 function Post({ userName, caption, imgUrl, id }) {
@@ -28,12 +32,12 @@ function Post({ userName, caption, imgUrl, id }) {
 
   const dispatch = useDispatch();
   const getComment = useSelector((state) => state.comments);
+  console.log(getComment);
 
   const resetBtn = () => {
     setShowCommentInput(false);
     setAddNewComment("");
   };
-  console.log(getComment);
   const handleDeletePost = (e) => {
     e.preventDefault();
     swal({
@@ -100,11 +104,29 @@ function Post({ userName, caption, imgUrl, id }) {
           <div className="d-flex gap-2">
             <FaRegHeart
               className={like ? "d-block" : "d-none"}
-              onClick={() => setLike(!like)}
+              onClick={() => {
+                console.log("ghalb adi raft");
+                dispatch(
+                  addLikesFromServer({
+                    userId: 1,
+                    postId: id,
+                  })
+                );
+                setLike(!like);
+              }}
             />
             <FaHeart
               className={!like ? "heart d-block zoom-in-zoom-out" : "d-none"}
-              onClick={() => setLike(!like)}
+              onClick={() => {
+                console.log("ghalb ghermez raft");
+                dispatch(
+                  removeLikesFromServer({
+                    userId: 1,
+                    postId: id,
+                  })
+                );
+                setLike(!like);
+              }}
             />
             <FaRegComment
               className={showCommentInput ? "zoom-in-zoom-out" : ""}
@@ -177,7 +199,7 @@ function Post({ userName, caption, imgUrl, id }) {
               onClick={() => {
                 dispatch(
                   addCommentsFromServer({
-                    userName: "un",
+                    userName: "Unknown",
                     text: addNewComment,
                     postId: id,
                   })

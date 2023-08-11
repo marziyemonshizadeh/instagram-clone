@@ -106,11 +106,39 @@
       "id": 15
     },
     {
-      "email": "marziehmonshizade@yahoo.com",
-      "fullName": "11111",
-      "userName": "1111111",
-      "password": "111111111111",
+      "email": "SelenaG@yahoo.com",
+      "fullName": "selena",
+      "userName": "SelenaG",
+      "password": "12345678",
       "id": 16
+    },
+    {
+      "email": "taroEmir@yahoo.com",
+      "fullName": "taro",
+      "userName": "taroEmir",
+      "password": "12345678",
+      "id": 17
+    },
+    {
+      "email": "webdeveloper@yahoo.com",
+      "fullName": "reactjs",
+      "userName": "reactjs",
+      "password": "12345678",
+      "id": 18
+    },
+    {
+      "email": "marziehmonshizade@yahoo.com",
+      "fullName": "marzieh",
+      "userName": "marzieh",
+      "password": "12345678",
+      "id": 19
+    },
+    {
+      "email": "marziehmonshizade@yahoo.com",
+      "fullName": "111111111111",
+      "userName": "111111111111111",
+      "password": "11111111111111111111",
+      "id": 20
     }
   ],
   "posts": [
@@ -185,17 +213,100 @@
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://img.theculturetrip.com/wp-content/uploads/2019/11/kf796m.jpg",
       "id": 12
-    },
-    {
-      "userName": "m",
-      "caption": "m",
-      "imgUrl": "https://media.sproutsocial.com/uploads/2022/05/How-to-post-on-instagram-from-pc.jpg",
-      "id": 13
     }
   ],
-  "likes": [],
+  "likes": [
+    {
+      "userId": 1,
+      "postId": 1,
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "postId": 2,
+      "id": 2
+    },
+    {
+      "userId": 1,
+      "postId": 3,
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "postId": 4,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "postId": 5,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "postId": 6,
+      "id": 6
+    },
+    {
+      "userId": 1,
+      "postId": 7,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "postId": 8,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "postId": 1,
+      "id": 9
+    }
+  ],
   "saves": [],
-  "comments": [],
+  "comments": [
+    {
+      "userName": "SelenaG",
+      "text": "comment for post 1",
+      "postId": 1,
+      "id": 2
+    },
+    {
+      "userName": "mohamad",
+      "text": "comment for post 1",
+      "postId": 1,
+      "id": 3
+    },
+    {
+      "userName": "kimiya",
+      "text": "comment for post 2",
+      "postId": 2,
+      "id": 4
+    },
+    {
+      "userName": "un",
+      "text": "ssss",
+      "postId": 1,
+      "id": 5
+    },
+    {
+      "userName": "un",
+      "text": "aaaaaaaaaaaaaaaaaaaa",
+      "postId": 2,
+      "id": 6
+    },
+    {
+      "userName": "Unknown",
+      "text": "woow that's amazing!",
+      "postId": 5,
+      "id": 7
+    },
+    {
+      "userName": "Unknown",
+      "text": "milan:)",
+      "postId": 12,
+      "id": 8
+    }
+  ],
   "stories": [
     {
       "id": 1,
