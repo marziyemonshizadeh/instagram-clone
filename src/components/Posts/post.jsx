@@ -1,31 +1,31 @@
 import React, { useState } from "react";
-
 import { BsPatchCheckFill } from "react-icons/bs";
 import { FaCheck, FaHeart, FaRegComment, FaRegHeart } from "react-icons/fa";
 import { LuSend } from "react-icons/lu";
 import { MdCancel } from "react-icons/md";
 import { RiBookmarkFill, RiBookmarkLine } from "react-icons/ri";
 import { TfiMoreAlt } from "react-icons/tfi";
-import Comment from "../comments/comment";
-import LazyImg from "../lazyLoadImg/lazyLoadImg";
-// import { useDispatch, useSelector } from 'react-redux';
-// import { getPostCommentsFromServer } from '../../redux/store/posts/comments';
-// import apiRequests from '../../Services/axios/Configs/configs';
-
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
+import Comment from "../comments/comment";
+
+import { getPostCommentsFromServer } from "../../redux/store/posts/comments";
 import { removePostsFromServer } from "../../redux/store/posts/posts";
+import LazyImg from "../lazyLoadImg/lazyLoadImg";
+
 import "./post.css";
 
-function Post({ userName, caption, imgUrl, id, cmnt }) {
+function Post({ userName, caption, imgUrl, id }) {
   // states
   const [like, setLike] = useState(true);
   const [save, setSave] = useState(true);
-  const [newComment, setNewComment] = useState("");
+  const [addNewComment, setAddNewComment] = useState("");
   const [showCommentInput, setShowCommentInput] = useState(false);
+  const [showCommentBtn, setShowCommentBtn] = useState(true);
 
   const dispatch = useDispatch();
-
+  const getComment = useSelector((state) => state.comments);
+  console.log(getComment);
   const handleDeletePost = (e) => {
     e.preventDefault();
     swal({
@@ -43,30 +43,10 @@ function Post({ userName, caption, imgUrl, id, cmnt }) {
       }
     });
   };
-  // const com = cmnt;
-  //redux
-  // const postComments = useSelector((state) => state.comments)
-  // const dispatch = useDispatch();
-  // console.log('postComments:',postComments);
-
   // useEffect(() => {
-  //     dispatch(getPostCommentsFromServer("http://localhost:3001/comments"))
-  // },[])
-  // const [comments, setComments] = useState();
-
-  // show all comments
-  // useEffect(() => {
-  //     getAllComments();
-  //     dispatch(getPostCommentsFromServer("http://localhost:3001/comments"))
-  //     console.log('i am post use effect ! i am render');
-  // },[])
-
-  // const getAllComments=()=>{
-  //     apiRequests.get("/comments")
-  //     .then(res => setComments(res.data))
-  //     .catch((err) => {
-  //         console.log(err)})
-  // }
+  //   dispatch(getPostCommentsFromServer(id));
+  //   console.log("id=", id);
+  // }, [id]);
   return (
     <div className="card mx-md-auto  mt-2">
       {/* header */}
@@ -102,9 +82,6 @@ function Post({ userName, caption, imgUrl, id, cmnt }) {
           </ul>
         </div>
       </header>
-      {/* {com.map(i=>{
-                   <p>hi {i.userName}</p>
-                })}  */}
       {/* image */}
       <LazyImg
         src={imgUrl}
@@ -146,40 +123,48 @@ function Post({ userName, caption, imgUrl, id, cmnt }) {
           <span className="fw-bold me-2">{userName}</span>
           {caption}
         </div>
-        <Comment text="amazing!!!" />
+        {getComment.map(
+          (comment) =>
+            comment.postId == id && (
+              <Comment
+                userName={comment.userName}
+                text={comment.text}
+                id={comment.id}
+                key={comment.id}
+              />
+            )
+        )}
         {/* post's comments */}
-        {/* <ul>
-                    { postComments.map((comment)=>(
-                        <li className="d-flex justify-content-between" key={comment.id}>
-                            {id === comment.postId && 
-                                <>
-                                    <div>
-                                        <span className="fw-bold me-2">{comment.userName}</span>
-                                        {comment.body}
-                                    </div>
-                                    <BsTrash3Fill/>
-                                </>}
-                        </li>
-                    ))}
-                    </ul>  */}
-        {/* <div>{userName}: comments post {id} = {cmnt.map(i => {
-                        console.log(`post ${id}=`,i.body);
-                    })}</div> */}
+        {showCommentBtn && (
+          <div className="d-flex justify-content-end fw-bold text-semibold text-muted me-2 mb-2">
+            <button
+              type="button"
+              className="btn btn-light"
+              onClick={() => {
+                dispatch(getPostCommentsFromServer(id));
+                setShowCommentBtn(!showCommentBtn);
+              }}
+            >
+              Show Post's Comments
+            </button>
+          </div>
+        )}
+
         {/* add comments */}
         <div className={showCommentInput ? "d-block" : "d-none"}>
           <input
             type="text"
             className="form-control mt-2"
             placeholder="Add a comment for this post"
-            value={newComment}
-            onChange={(event) => setNewComment(event.target.value)}
+            value={addNewComment}
+            onChange={(event) => setAddNewComment(event.target.value)}
           />
           <div className="d-flex justify-content-end mt-2">
             <MdCancel
               className="me-1 cancel"
               onClick={() => {
                 setShowCommentInput(false);
-                setNewComment("");
+                setAddNewComment("");
               }}
             />
             <FaCheck className="success" />
