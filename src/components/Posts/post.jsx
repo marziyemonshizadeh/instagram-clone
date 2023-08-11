@@ -9,7 +9,10 @@ import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 import Comment from "../comments/comment";
 
-import { getPostCommentsFromServer } from "../../redux/store/posts/comments";
+import {
+  addCommentsFromServer,
+  getPostCommentsFromServer,
+} from "../../redux/store/posts/comments";
 import { removePostsFromServer } from "../../redux/store/posts/posts";
 import LazyImg from "../lazyLoadImg/lazyLoadImg";
 
@@ -25,6 +28,11 @@ function Post({ userName, caption, imgUrl, id }) {
 
   const dispatch = useDispatch();
   const getComment = useSelector((state) => state.comments);
+
+  const resetBtn = () => {
+    setShowCommentInput(false);
+    setAddNewComment("");
+  };
   console.log(getComment);
   const handleDeletePost = (e) => {
     e.preventDefault();
@@ -43,10 +51,6 @@ function Post({ userName, caption, imgUrl, id }) {
       }
     });
   };
-  // useEffect(() => {
-  //   dispatch(getPostCommentsFromServer(id));
-  //   console.log("id=", id);
-  // }, [id]);
   return (
     <div className="card mx-md-auto  mt-2">
       {/* header */}
@@ -157,17 +161,30 @@ function Post({ userName, caption, imgUrl, id }) {
             className="form-control mt-2"
             placeholder="Add a comment for this post"
             value={addNewComment}
-            onChange={(event) => setAddNewComment(event.target.value)}
+            onChange={(event) => {
+              setAddNewComment(event.target.value);
+            }}
           />
           <div className="d-flex justify-content-end mt-2">
             <MdCancel
               className="me-1 cancel"
               onClick={() => {
-                setShowCommentInput(false);
-                setAddNewComment("");
+                resetBtn();
               }}
             />
-            <FaCheck className="success" />
+            <FaCheck
+              className="success"
+              onClick={() => {
+                dispatch(
+                  addCommentsFromServer({
+                    userName: "un",
+                    text: addNewComment,
+                    postId: id,
+                  })
+                );
+                resetBtn();
+              }}
+            />
           </div>
         </div>
       </div>

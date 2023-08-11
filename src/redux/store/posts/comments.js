@@ -18,6 +18,19 @@ export const removeCommentsFromServer = createAsyncThunk(
     return apiRequests.delete(`/comments/${id}`);
   }
 );
+export const addCommentsFromServer = createAsyncThunk(
+  "comments/addCommentsFromServer",
+  async (values) => {
+    return apiRequests
+      .post("/comments/", values)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+);
 const slice = createSlice({
   name: "comments",
   initialState: [],
@@ -37,6 +50,11 @@ const slice = createSlice({
           (comments) => comments.id !== action.meta.arg
         );
         return newComments;
+      }),
+      builder.addCase(addCommentsFromServer.fulfilled, (state, action) => {
+        console.log("state comment add fulfilled :", state);
+        console.log("action comment add fulfilled:", action);
+        return action.payload;
       });
   },
 });
