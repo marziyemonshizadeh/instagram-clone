@@ -1,17 +1,14 @@
 import React from "react";
 import { BsPatchCheckFill } from "react-icons/bs";
-
-// import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import swal from "sweetalert";
+import swal from "sweetalert";
 import registerSchema from "../../Validations/creatPostRegister";
-
+import LazyImg from "../../components/lazyLoadImg/lazyLoadImg";
 // import { addPostsFromServer } from "../../redux/store/posts/posts";
 import { Field, Form, Formik } from "formik";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPostsFromServer } from "../../redux/store/posts/posts";
-import "./create.css";
 
 const Create = () => {
   //   const fileRef = useRef(null);
@@ -22,13 +19,19 @@ const Create = () => {
   return (
     <>
       <Formik
-        initialValues={{ userName: "try", caption: "", imgUrl: "" }}
+        initialValues={{ userName: "Unknown", caption: "", imgUrl: "" }}
         validationSchema={registerSchema}
         onSubmit={(values) => {
-          console.log(values);
-          console.log("caption =", values.caption);
-          console.log("imgUrl =", values.imgUrl);
-          return dispatch(addPostsFromServer(values));
+          setTimeout(() => {
+            dispatch(addPostsFromServer(values));
+            swal({
+              title: "create post successfully :)",
+              text: "You clicked the button!",
+              icon: "success",
+              button: "ok!",
+            });
+            navigate("/main");
+          }, 3000);
         }}
       >
         {(formik) => (
@@ -52,41 +55,41 @@ const Create = () => {
               <p className="fw-bold">userName</p>
               <BsPatchCheckFill className="mt-1 ms-1 bluetick" />
             </div>
-            <div className="card-body">
+            <div className="card-body px-0">
               {/* image */}
-              <div className="change-profile-input-box">
-                <img
-                  src={preview}
-                  alt="img "
-                  className={`object-fit-fill ${preview ? null : "d-none"}`}
-                />
-                <input
-                  id="imgUrl"
-                  name="imgUrl"
-                  type="file"
-                  className="mx-auto"
-                  onChange={(event) => {
-                    let reader = new FileReader();
-                    reader.onload = () => {
-                      if (reader.readyState === 2) {
-                        setPreview(reader.result);
-                        formik.setFieldValue("imgUrl", reader.result);
-                      }
-                    };
-                    reader.readAsDataURL(event.currentTarget.files[0]);
-                    formik.setFieldValue("imgUrl", "preview");
-                    console.log("imgUrl", preview);
-                  }}
-                />
-                {formik.errors.imgUrl && formik.touched.imgUrl && (
-                  <div className="text-danger d-flex justify-content-end">
-                    {formik.errors.imgUrl}
-                  </div>
-                )}
-              </div>
-              {/* <input type="file" name="file" /> */}
-              {/* textarea */}
-              <div className="card-text mb-3">
+              <LazyImg
+                src={preview}
+                alt="img "
+                className={`img-fluid object-fit-fill ${
+                  preview ? null : "d-none"
+                }`}
+              />
+              <input
+                id="imgUrl"
+                name="imgUrl"
+                type="file"
+                className="mx-auto ms-3 mt-2"
+                onChange={(event) => {
+                  let reader = new FileReader();
+                  reader.onload = () => {
+                    if (reader.readyState === 2) {
+                      setPreview(reader.result);
+                      formik.setFieldValue("imgUrl", reader.result);
+                    }
+                  };
+                  reader.readAsDataURL(event.currentTarget.files[0]);
+                  formik.setFieldValue("imgUrl", "preview");
+                  console.log("imgUrl", preview);
+                }}
+              />
+              {/*show imgUrl error */}
+              {formik.errors.imgUrl && formik.touched.imgUrl && (
+                <div className="text-danger d-flex justify-content-end me-3">
+                  {formik.errors.imgUrl}
+                </div>
+              )}
+              <div className="card-text p-3">
+                {/* textarea */}
                 <label htmlFor="caption" className="form-label">
                   caption
                 </label>
@@ -96,28 +99,31 @@ const Create = () => {
                   name="caption"
                   className="form-control"
                 />
-              </div>
-              {formik.errors.caption && formik.touched.caption && (
-                <div className="text-danger d-flex justify-content-end">
-                  {formik.errors.caption}
+                {/*show caption error */}
+                {formik.errors.caption && formik.touched.caption && (
+                  <div className="text-danger d-flex justify-content-end">
+                    {formik.errors.caption}
+                  </div>
+                )}
+                {console.log(formik)}
+                {/* buttons */}
+                <div className="d-flex flex-row-reverse gap-2 mt-3">
+                  <button
+                    type="submit"
+                    className="btn btn-success"
+                    // disable={formik.isSubmitting}
+                  >
+                    {formik.isSubmitting ? "Loading..." : "Send"}
+                    {/* Send */}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => navigate("/main")}
+                  >
+                    Cancel
+                  </button>
                 </div>
-              )}
-              {console.log(formik)}
-              <div className="d-flex flex-row-reverse gap-2 mt-3">
-                <button
-                  type="submit"
-                  className="btn btn-success"
-                  disable={formik.dirty && formik.isSubmitting}
-                >
-                  Send
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-danger"
-                  onClick={() => navigate("/main")}
-                >
-                  Cancel
-                </button>
               </div>
             </div>
           </Form>
