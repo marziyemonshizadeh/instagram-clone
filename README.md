@@ -31,9 +31,10 @@ This project is a simulation of the famous Instagram website.
 ## Features
 You can :
 - log in
+- log out
 - sign up
 - delete account
-- add posts
+- add posts (You can add posts on the create page)
 - delete posts
 - like posts
 - save posts
@@ -41,6 +42,8 @@ You can :
 - Delete a comment
 - Product purchase(add to cart)
 - Remove the product from the shopping cart
+- View your profile information
+- View about Instagram on the 'About Me' page
 
 
 ## Screenshots
