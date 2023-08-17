@@ -1,16 +1,16 @@
 import { useFormik } from "formik";
-import lodash from "lodash";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
-import apiRequests from "../../Services/axios/Configs/configs";
 import registerSchema from "../../Validations/loginRegister";
-
 import LogoImg from "../../components/responsiveLogo/responsiveLogo";
 
 import { BsApple, BsGooglePlay } from "react-icons/bs";
 
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUsersFromServer } from "../../redux/store/users/users";
 import "./login.css";
 
 const LogIn = () => {
@@ -18,51 +18,70 @@ const LogIn = () => {
   const [isReCaptchaVerify, setIsReCaptchaVerify] = useState(false);
   const navigate = useNavigate();
   // const abortController = new AbortController();
+  const dispatch = useDispatch();
 
   const form = useFormik({
     initialValues: {
-      name: "Razieh",
-      password: "1234",
+      name: "",
+      password: "",
     },
     onSubmit: (values, { setSubmitting }) => {
       console.log("Form Inputs Data =>", values);
       setTimeout(() => {
         setSubmitting(false);
       }, 8000);
-
-      apiRequests
-        .get(
-          "/users",
-          { values }
-          // {signal: abortController.setTimeout(0),}
+      dispatch(
+        getUsersFromServer(
+          `/users?userName=${values.name}&&password=${values.password}`
         )
-        .then((res) => {
-          const result = lodash.filter(res.data, {
-            userName: values.name,
-            password: values.password,
-          });
-          console.log(res.data);
-          console.log(result.length);
-          if (result.length > 0) {
-            swal({
-              title: `Dear ${values.name} welcome to instagram :)`,
-              text: "You clicked the button!",
-              icon: "success",
-              button: "ok!",
-            });
-            setTimeout(() => navigate("/main"), 5000);
-          } else {
-            alert(`not found ${values.name} user , please  sign up `);
-            setSubmitting(false);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-          alert("Failed :" + err.message);
-        });
+      );
+
+      // apiRequests
+      //   .get(
+      //     "/users",
+      //     { values }
+      //     // {signal: abortController.setTimeout(0),}
+      //   )
+      //   .then((res) => {
+      //     const result = lodash.filter(res.data, {
+      //       userName: values.name,
+      //       password: values.password,
+      //     });
+      //     console.log(res.data);
+      //     console.log(result.length);
+      //     if (result.length > 0) {
+      //       swal({
+      //         title: `Dear ${values.name} welcome to instagram :)`,
+      //         text: "You clicked the button!",
+      //         icon: "success",
+      //         button: "ok!",
+      //       });
+      //       setTimeout(() => navigate("/main"), 5000);
+      //     } else {
+      //       alert(`not found ${values.name} user , please  sign up `);
+      //       setSubmitting(false);
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //     alert("Failed :" + err.message);
+      //   });
     },
     validationSchema: registerSchema,
   });
+  const { userName } = useSelector((state) => state.users);
+  // redirect authenticated user to home page
+  useEffect(() => {
+    if (userName) {
+      swal({
+        title: `Dear ${userName} welcome to instagram :)`,
+        text: "You clicked the button!",
+        icon: "success",
+        button: "ok!",
+      });
+      setTimeout(() => navigate("/main"), 3000);
+    }
+  }, [navigate, userName]);
 
   const verifyReCaptchaHandler = () => {
     setIsReCaptchaVerify(true);
