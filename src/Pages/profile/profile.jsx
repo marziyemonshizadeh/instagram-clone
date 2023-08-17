@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Profile() {
+  const users = useSelector((state) => state.users);
   return (
     <div className="d-flex justify-content-center mt-5">
       <div
@@ -16,19 +18,19 @@ export default function Profile() {
         />
         <div className="d-md-flex justify-content-between p-3 border-bottom border-dark-subtle">
           <p className="fw-bold text-muted">USERNAME</p>
-          <p style={{ color: "#F22390" }}>Marzieh</p>
+          <p style={{ color: "#F22390" }}>{users.userName}</p>
         </div>
         <div className="d-md-flex justify-content-between p-3 border-bottom border-dark-subtle">
           <p className="fw-bold text-muted">FULLNAME</p>
-          <p style={{ color: "#F22390" }}>marziehkarimi</p>
+          <p style={{ color: "#F22390" }}>{users.fullName}</p>
         </div>
         <div className="d-md-flex justify-content-between p-3 border-bottom border-dark-subtle">
           <p className="fw-bold text-muted">EMAIL</p>
-          <p style={{ color: "#F22390" }}>marzieh@yahoo.com</p>
+          <p style={{ color: "#F22390" }}>{users.email}</p>
         </div>
         <div className="d-md-flex justify-content-between p-3 border-bottom border-dark-subtle">
           <p className="fw-bold text-muted">PASSWORD</p>
-          <p style={{ color: "#F22390" }}>123456789</p>
+          <p style={{ color: "#F22390" }}>{users.password}</p>
         </div>
       </div>
     </div>
