@@ -1,7 +1,7 @@
 # instagram-clone
 I created this project with vite
 This project is a simulation of the famous Instagram website.
-> Live demo [_here_](). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [](). <!-- If you have the project hosted somewhere, include the link here. -->
 
 
 
@@ -48,27 +48,15 @@ You can :
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 
-## Setup
+## Usage
 1) npm install
 2) npm run dev
-run json-server :
 3) npx json-server --watch mydb.json --port 3001
 
-
-## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
 
 
 ## Project Status
 Project is: _in progress
-
-
-## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
 
 
 ## Contact
