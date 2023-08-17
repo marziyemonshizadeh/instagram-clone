@@ -1,13 +1,13 @@
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import swal from "sweetalert";
 
-import apiRequests from "../../Services/axios/Configs/configs";
 import registerSchema from "../../Validations/signUpRegister";
 import LogoImg from "../../components/responsiveLogo/responsiveLogo";
 
 // import Facebook from '../src/images/facebook.png'
+import { useDispatch } from "react-redux";
+import { addUsersFromServer } from "../../redux/store/users/users";
 import "./signup.css";
 
 const SignUp = () => {
@@ -15,6 +15,7 @@ const SignUp = () => {
   const abortController = new AbortController();
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const form = useFormik({
     initialValues: {
@@ -28,35 +29,16 @@ const SignUp = () => {
       setTimeout(() => {
         setSubmitting(false);
       }, 8000);
-      if (true) {
-        apiRequests
-          .post(
-            "/users",
-            values
-            //  ,{signal: abortController.setTimeout(0),}
-          )
-          .then((res) => {
-            console.log(res);
-            swal({
-              title: `Registered successfully :)`,
-              text: "You clicked the button!",
-              icon: "success",
-              button: "ok!",
-            });
-            setTimeout(() => navigate("/main"), 5000);
-          })
-          .catch((err) => {
-            swal({
-              title: `'Failed :'  ${err.message}`,
-              text: "You clicked the button!",
-              icon: "error",
-              button: "ok!",
-            });
-          });
+      dispatch(addUsersFromServer(values));
+      if (setSubmitting) {
+        setTimeout(() => navigate("/main"), 3000);
       }
     },
     validationSchema: registerSchema,
   });
+  // useEffect(() => {
+  //   setTimeout(() => navigate("/main"), 3000);
+  // });
   return (
     <div className="text-center px-4 py-4 clr">
       <form

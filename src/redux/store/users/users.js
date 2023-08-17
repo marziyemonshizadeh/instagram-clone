@@ -1,31 +1,17 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-// import { useNavigate } from "react-router-dom";
-// import swal from "sweetalert";
 import apiRequests from "../../../Services/axios/Configs/configs";
 
 export const getUsersFromServer = createAsyncThunk(
   "users/getUsersFromServer",
   async (url) => {
-    return (
-      apiRequests
-        .get(url)
-        .then((res) => {
-          return res.data;
-        })
-        // .then(() => {
-        //   const navigate = useNavigate();
-        //   swal({
-        //     title: `welcome to instagram :)`,
-        //     text: "You clicked the button!",
-        //     icon: "success",
-        //     button: "ok!",
-        //   });
-        //   setTimeout(() => navigate("/main"), 5000);
-        // })
-        .catch((err) => {
-          console.log("err:", err);
-        })
-    );
+    return apiRequests
+      .get(url)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.log("err:", err);
+      });
   }
 );
 export const removeUsersFromServer = createAsyncThunk(
@@ -34,36 +20,19 @@ export const removeUsersFromServer = createAsyncThunk(
     return apiRequests.delete(`/users/${id}`);
   }
 );
-// export const addUsersFromServer = createAsyncThunk(
-//   "users/addUsersFromServer",
-//   async (values) => {
-//     const navigate = useNavigate();
-//     return apiRequests
-//       .post(
-//         "/users",
-//         values
-//         //  ,{signal: abortController.setTimeout(0),}
-//       )
-//       .then((res) => {
-//         console.log("res", res);
-//         swal({
-//           title: `Registered successfully :)`,
-//           text: "You clicked the button!",
-//           icon: "success",
-//           button: "ok!",
-//         });
-//         setTimeout(() => navigate("/main"), 8000);
-//       })
-//       .catch((err) => {
-//         swal({
-//           title: `'Failed :'  ${err.message}`,
-//           text: "You clicked the button!",
-//           icon: "error",
-//           button: "ok!",
-//         });
-//       });
-//   }
-// );
+export const addUsersFromServer = createAsyncThunk(
+  "users/addUsersFromServer",
+  async (values) => {
+    return apiRequests
+      .post("/users", values)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+);
 
 const slice = createSlice({
   name: "users",
@@ -79,13 +48,12 @@ const slice = createSlice({
       builder.addCase(removeUsersFromServer.fulfilled, (state, action) => {
         const newPosts = state.filter((post) => post.id !== action.meta.arg);
         return newPosts;
+      }),
+      builder.addCase(addUsersFromServer.fulfilled, (state, action) => {
+        console.log("state add user fulfilled :", state);
+        console.log("action add user fulfilled:", action);
+        return action.payload;
       });
-    // ,
-    // builder.addCase(addUsersFromServer.fulfilled, (state, action) => {
-    //   console.log("state post fulfilled :", state);
-    //   console.log("action post fulfilled:", action);
-    //   return action.payload;
-    // });
   },
 });
 export default slice.reducer;
