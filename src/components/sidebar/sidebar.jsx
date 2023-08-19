@@ -1,33 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { BiAddToQueue, BiStore } from "react-icons/bi";
-import { BsBoxArrowRight, BsCart3, BsInfoCircle } from "react-icons/bs";
-import { CgProfile } from "react-icons/cg";
-import { FaRegHeart } from "react-icons/fa";
 import { IoPersonRemove } from "react-icons/io5";
-import { MdHomeFilled } from "react-icons/md";
-import { RiBookmarkLine } from "react-icons/ri";
-import InstagramLogo from "../../assets/Instagram_Logo.png";
-// import DarkMood from "../darkLightBtn/Btn";
 import { useDispatch } from "react-redux";
 import swal from "sweetalert";
+import InstagramLogo from "../../assets/Instagram_Logo.png";
 import { removeUsersFromServer } from "../../redux/store/users/users";
 import "../sidebar/sidebar.css";
+import sidebarItems from "./sidebarItems";
 
 export default function sidebar() {
-  const sidebarItems = [
-    { icon: MdHomeFilled, text: "Home", to: "/main" },
-    { icon: BiStore, text: "Store", to: "/main/store" },
-    // { icon: BsBoxArrowInLeft, text: "Log in", to: "/login" },
-    { icon: BiAddToQueue, text: "Create", to: "/main/create" },
-    { icon: BsInfoCircle, text: "AboutMe", to: "/main/aboutme" },
-    { icon: RiBookmarkLine, text: "Saves", to: "#" },
-    { icon: FaRegHeart, text: "Likes", to: "#" },
-    { icon: CgProfile, text: "Profile", to: "/main/profile" },
-    { icon: BsCart3, text: "Cart", to: "/main/cart" },
-    { icon: BsBoxArrowRight, text: "Log out", to: "#" },
-  ];
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClick = (e) => {
