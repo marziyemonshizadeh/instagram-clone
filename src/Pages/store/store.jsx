@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import LazyLoadImage from "../../components/lazyLoadImg/lazyLoadImg";
+import { AddCart } from "../../redux/store/shopping/cart";
 import { getProductsFromServer } from "../../redux/store/shopping/products";
 const Store = () => {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  console.log("products = ", products);
+  // console.log("products = ", products);
 
   useEffect(() => {
     dispatch(getProductsFromServer("/products"));
@@ -17,9 +18,6 @@ const Store = () => {
         {products.map((product) => (
           <div className="col" key={product.id}>
             <div className="card">
-              {/* <img src={product.productUrl} alt={product.alt} className="card-img-top"/>
-                  <LazyLoadImage src="https://media.jdsports.com/i/jdsports/DD1399_105_P1?$default$&w=671&&h=671&bg=rgb(237,237,237)" alt="k"/> */}
-
               <LazyLoadImage
                 src={product.productUrl}
                 alt={product.alt}
@@ -29,10 +27,16 @@ const Store = () => {
               <div className="card-body">
                 <p className="card-text">{product.description} </p>
                 <div className="d-flex justify-content-between align-items-center mt-2">
-                  <button type="button" className="btn btn-outline-dark">
+                  <button
+                    type="button"
+                    className="btn btn-outline-dark"
+                    onClick={() => {
+                      dispatch(AddCart(product));
+                    }}
+                  >
                     add to cart
                   </button>
-                  <small className="text-muted">price: {product.price}</small>
+                  <small className="text-muted">price: {product.price} $</small>
                 </div>
               </div>
             </div>
