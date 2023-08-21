@@ -36,7 +36,9 @@ const Store = () => {
                   >
                     add to cart
                   </button>
-                  <small className="text-muted">price: {product.price} $</small>
+                  <small className="text-muted">
+                    price: {product.price.toLocaleString()} $
+                  </small>
                 </div>
               </div>
             </div>

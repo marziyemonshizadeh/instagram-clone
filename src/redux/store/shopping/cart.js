@@ -7,7 +7,14 @@ const slice = createSlice({
     AddCart: (state, action) => {
       state.cart.push(action.payload);
     },
+    RemoveFromCart: (state, action) => {
+      const indexOfId = state.cart.indexOf(action.payload);
+      state.cart.splice(indexOfId, 1);
+    },
+    ClearAllItems: (state) => {
+      state.cart = [];
+    },
   },
 });
-export const { AddCart } = slice.actions;
+export const { AddCart, RemoveFromCart, ClearAllItems } = slice.actions;
 export default slice.reducer;
