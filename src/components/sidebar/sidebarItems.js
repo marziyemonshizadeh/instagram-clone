@@ -7,11 +7,10 @@ import { RiBookmarkLine } from "react-icons/ri";
 
 let sidebarItems = [
   { icon: MdHomeFilled, text: "Home", to: "/main" },
-  { icon: BiStore, text: "Store", to: "/main/store" },
-  // { icon: BsBoxArrowInLeft, text: "Log in", to: "/login" },
+  { icon: BiStore, text: "Shop", to: "/main/shop" },
   { icon: BiAddToQueue, text: "Create", to: "/main/create" },
-  { icon: BsInfoCircle, text: "AboutMe", to: "/main/aboutme" },
-  { icon: RiBookmarkLine, text: "Saves", to: "#" },
+  { icon: BsInfoCircle, text: "AboutUs", to: "/main/aboutus" },
+  { icon: RiBookmarkLine, text: "Saves", to: "/main/saves" },
   { icon: FaRegHeart, text: "Likes", to: "/main/likes" },
   { icon: CgProfile, text: "Profile", to: "/main/profile" },
   { icon: BsCart3, text: "Cart", to: "/main/cart" },
