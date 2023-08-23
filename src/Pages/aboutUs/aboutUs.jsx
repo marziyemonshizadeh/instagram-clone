@@ -3,13 +3,13 @@ import LazyImg from "../../components/lazyLoadImg/lazyLoadImg";
 import ReactFastMarquee from "../../components/reactFastMarquee/reactFastMarquee";
 import Title from "../../components/title/title";
 
-import "./aboutMe.css";
+import "./aboutUs.css";
 
 const AboutMe = () => {
   return (
     <>
       <div className="parallax img1"></div>
-      <section className="lh-lg text-break">
+      <section className="container px-0 lh-lg text-break">
         Instagram is a photo and video sharing social networking service owned
         by American company Meta Platforms. The app allows users to upload media
         that can be edited with filters and organized by hashtags and
