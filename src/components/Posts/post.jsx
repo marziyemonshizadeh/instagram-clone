@@ -29,10 +29,13 @@ function Post({ userName, caption, imgUrl, id }) {
   const [addNewComment, setAddNewComment] = useState("");
   const [showCommentInput, setShowCommentInput] = useState(false);
   const [showCommentBtn, setShowCommentBtn] = useState(true);
+  const [drapDown, setDrapDown] = useState(false);
 
   const dispatch = useDispatch();
   const getComment = useSelector((state) => state.comments);
+  const users = useSelector((state) => state.users);
   console.log(getComment);
+  console.log(users);
 
   const resetBtn = () => {
     setShowCommentInput(false);
@@ -52,6 +55,8 @@ function Post({ userName, caption, imgUrl, id }) {
           icon: "success",
           buttons: "ok",
         });
+      } else {
+        setDrapDown((prev) => !prev);
       }
     });
   };
@@ -78,16 +83,33 @@ function Post({ userName, caption, imgUrl, id }) {
           <BsPatchCheckFill className="mt-1 ms-1 bluetick" />
         </div>
         <div className="dropdown">
-          <button type="button" className="btn" data-bs-toggle="dropdown">
+          <button
+            type="button"
+            className="btn"
+            data-bs-toggle="dropdown"
+            onClick={() => {
+              setDrapDown((prev) => !prev);
+              console.log(drapDown);
+            }}
+          >
             <TfiMoreAlt className="me-2" />
           </button>
-          <ul className="dropdown-menu">
-            <li>
-              <a className="dropdown-item" href="#" onClick={handleDeletePost}>
-                Delete
-              </a>
-            </li>
-          </ul>
+          {drapDown && (
+            <ul
+              className="z-3 position-absolute border border-1"
+              style={{ backgroundColor: "white" }}
+            >
+              <li className="p-2 rounded">
+                <a
+                  className="dropdown-item"
+                  href="#"
+                  onClick={handleDeletePost}
+                >
+                  Delete
+                </a>
+              </li>
+            </ul>
+          )}
         </div>
       </header>
       {/* image */}
@@ -108,7 +130,7 @@ function Post({ userName, caption, imgUrl, id }) {
                 console.log("ghalb adi raft");
                 dispatch(
                   addLikesFromServer({
-                    userId: 1,
+                    userId: users.id,
                     postId: id,
                   })
                 );
@@ -120,17 +142,18 @@ function Post({ userName, caption, imgUrl, id }) {
               onClick={() => {
                 console.log("ghalb ghermez raft");
                 dispatch(
-                  removeLikesFromServer({
-                    userId: 1,
-                    postId: id,
-                  })
+                  removeLikesFromServer(
+                    12
+                    // { userId: 1,
+                    // postId: id,}
+                  )
                 );
                 setLike(!like);
               }}
             />
             <FaRegComment
               className={showCommentInput ? "zoom-in-zoom-out" : ""}
-              onClick={() => setShowCommentInput(true)}
+              onClick={() => setShowCommentInput((prev) => !prev)}
             />
             <LuSend />
           </div>
@@ -168,7 +191,7 @@ function Post({ userName, caption, imgUrl, id }) {
               className="btn btn-light"
               onClick={() => {
                 dispatch(getPostCommentsFromServer(id));
-                setShowCommentBtn(!showCommentBtn);
+                setShowCommentBtn((prev) => !prev);
               }}
             >
               Show Post's Comments
