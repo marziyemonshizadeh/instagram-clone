@@ -7,7 +7,7 @@ import LazyImg from "../../components/lazyLoadImg/lazyLoadImg";
 // import { addPostsFromServer } from "../../redux/store/posts/posts";
 import { Field, Form, Formik } from "formik";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPostsFromServer } from "../../redux/store/posts/posts";
 
 const Create = () => {
@@ -15,11 +15,12 @@ const Create = () => {
   const navigate = useNavigate();
   const [preview, setPreview] = useState(null);
   const dispatch = useDispatch();
-
+  const { userName } = useSelector((state) => state.users);
+  console.log(userName);
   return (
     <>
       <Formik
-        initialValues={{ userName: "Unknown", caption: "", imgUrl: "" }}
+        initialValues={{ userName: userName, caption: "", imgUrl: "" }}
         validationSchema={registerSchema}
         onSubmit={(values) => {
           setTimeout(() => {
@@ -35,7 +36,10 @@ const Create = () => {
         }}
       >
         {(formik) => (
-          <Form className="card mx-auto mt-5" style={{ maxWidth: 1024 }}>
+          <Form
+            className="card mx-auto mt-5"
+            style={{ maxWidth: 1024, backgroundColor: "#f9fcfec5" }}
+          >
             {/* cart header */}
             <div className="card-title d-flex justify-content-start flex-row align-items-center mt-1">
               <svg
@@ -52,7 +56,7 @@ const Create = () => {
                   d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                 />
               </svg>
-              <p className="fw-bold">userName</p>
+              <p className="fw-bold">{userName}</p>
               <BsPatchCheckFill className="mt-1 ms-1 bluetick" />
             </div>
             <div className="card-body px-0">

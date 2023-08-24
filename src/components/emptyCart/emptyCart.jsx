@@ -18,7 +18,7 @@ export default function emptyCart() {
         </p>
         <button
           type="button"
-          class="btn btn-light"
+          className="btn btn-light m-1"
           onClick={() => {
             navigate("/main/shop");
           }}
