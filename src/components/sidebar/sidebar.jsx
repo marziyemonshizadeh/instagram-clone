@@ -5,7 +5,7 @@ import { IoPersonRemove } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import swal from "sweetalert";
 import InstagramLogo from "../../assets/Instagram_Logo.png";
-import { removeUsersFromServer } from "../../redux/store/users/users";
+import { LogOut, removeUsersFromServer } from "../../redux/store/users/users";
 import "../sidebar/sidebar.css";
 import sidebarItems from "./sidebarItems";
 
@@ -54,6 +54,12 @@ export default function sidebar() {
                 <Link
                   to={i.to}
                   className="d-flex align-items-center py-md-3 py-3 px-2 rounded-3  overflow-hidden"
+                  onClick={() => {
+                    if (i.text == "Log out") {
+                      dispatch(LogOut());
+                      console.log("log out clicked");
+                    }
+                  }}
                 >
                   <i.icon className="icons me-md-2 me-3" />
                   <span className="d-md-block d-none">{i.text}</span>
@@ -61,11 +67,7 @@ export default function sidebar() {
               </li>
             );
           })}
-          <li
-            className="nav-item sidebarItems"
-            data-bs-toggle="tooltip"
-            // title={Delete}
-          >
+          <li className="nav-item sidebarItems" data-bs-toggle="tooltip">
             <Link
               to="#"
               className="d-flex align-items-center py-md-3 py-3 px-2 rounded-3  overflow-hidden"

@@ -13,7 +13,7 @@ export const getUsersFromServer = createAsyncThunk(
       .catch((err) => {
         swal({
           title:
-            "please run 'npx json-server --watch mydb.json --port 3001' in your terminal",
+            "!!! please run 'npx json-server --watch mydb.json --port 3001' in your terminal !!!",
           text: "You clicked the button!",
           icon: "warning",
           button: "got it!",
@@ -46,9 +46,10 @@ const slice = createSlice({
   name: "users",
   initialState: [],
   reducers: {
-    // LogOut: (state) => {
-    //   state.users = [];
-    // },
+    LogOut: (state) => {
+      state.users = null;
+      state.users.userName = null;
+    },
   },
 
   extraReducers: (builder) => {
