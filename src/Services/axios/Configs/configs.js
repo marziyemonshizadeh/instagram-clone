@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 //baseurl
 const apiRequests = axios.create({
@@ -26,17 +27,22 @@ apiRequests.interceptors.response.use(
   },
   (err) => {
     const status = err.response.status;
-
+    swal({
+      title: `Dear ${userName} welcome to instagram :)`,
+      text: "You clicked the button!",
+      icon: "success",
+      button: "ok!",
+    });
     if (status === 403) {
-      alert('err',err)
+      alert("err response 403", err);
     } else if (status === 429) {
-      alert('err',err)
+      alert("err response 429", err);
       // Coding
     } else if (status === 404) {
-      alert('err',err)
+      alert("err response 404", err);
       // Coding
     } else if (status === 401) {
-      alert('err',err)
+      alert("err response 401", err);
       // Navigate to login page
     }
 

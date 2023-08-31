@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import swal from "sweetalert";
 import apiRequests from "../../../Services/axios/Configs/configs";
 
 export const getUsersFromServer = createAsyncThunk(
@@ -10,6 +11,13 @@ export const getUsersFromServer = createAsyncThunk(
         return res.data;
       })
       .catch((err) => {
+        swal({
+          title:
+            "please run 'npx json-server --watch mydb.json --port 3001' in your terminal",
+          text: "You clicked the button!",
+          icon: "warning",
+          button: "got it!",
+        });
         console.log("err:", err);
       });
   }
@@ -37,7 +45,11 @@ export const addUsersFromServer = createAsyncThunk(
 const slice = createSlice({
   name: "users",
   initialState: [],
-  reducers: {},
+  reducers: {
+    // LogOut: (state) => {
+    //   state.users = [];
+    // },
+  },
 
   extraReducers: (builder) => {
     builder.addCase(getUsersFromServer.fulfilled, (state, action) => {
@@ -56,4 +68,5 @@ const slice = createSlice({
       });
   },
 });
+export const { LogOut } = slice.actions;
 export default slice.reducer;
