@@ -44,6 +44,7 @@ You can :
 - Add a comment
 - Delete a comment
 - Product purchase(add to cart)
+- View shopping cart
 - Remove the product from the shopping cart
 - View your profile information
 - View about Instagram on the 'About Me' page
