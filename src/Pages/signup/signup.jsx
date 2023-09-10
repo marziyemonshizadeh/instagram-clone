@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import registerSchema from "../../Validations/signUpRegister";
-import LogoImg from "../../components/responsiveLogo/responsiveLogo";
+import InstagramLogo from "../../components/instagramLogo/instagramLogo";
 
 // import Facebook from '../src/images/facebook.png'
 import { useDispatch } from "react-redux";
@@ -45,7 +45,7 @@ const SignUp = () => {
         className="col-lg-6 col-md-5 col-10 mx-auto cart-style p-3 px-5 clearfix"
         onSubmit={form.handleSubmit}
       >
-        <LogoImg />
+        <InstagramLogo />
         <div className="d-flex flex-column gap-2 text-center">
           <button className="btn btn-primary mt-2 fw-bold" type="button">
             <svg

@@ -43,7 +43,6 @@ export default function CartItems() {
                 style={{ fill: "#E817B3" }}
                 onClick={() => {
                   dispatch(RemoveFromCart(item));
-                  console.log("i want delete product in cart");
                 }}
               />
             </div>

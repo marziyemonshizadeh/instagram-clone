@@ -27,7 +27,7 @@ const Story = () => {
              {story.map((story)=>(
                 <div className='d-flex flex-column storyHoverStyle user-select-none' key={story.id}>
                 <div className="position-relative me-2 circleAround m-1">
-                    <LazyLoadImage src={story.imgUrl} alt={story.userName} className='img-fluid rounded-circle 'style={{padding:3}}/>
+                    <LazyLoadImage src={story.imgUrl} alt={story.userName} className='img-fluid rounded-circle p-1'/>
                 </div>
                 <div className='text-center'>{story.userName}</div>
             </div>
