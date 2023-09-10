@@ -165,3 +165,7 @@ a:hover {
   display: flex;
   justify-content: center;
 }
+@font-face {
+  font-family: 'instagramLogo';
+  src: local('instagramLogo'), url(../src/fonts/rP2Hp2yn6lkG50LoCZOIHQ.woff2) format('woff2');
+}  

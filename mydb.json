@@ -22,27 +22,6 @@
       "password": "12345"
     },
     {
-      "id": 4,
-      "email": "qaz@yahoo.com",
-      "fullName": "qaz",
-      "userName": "qaz",
-      "password": "123456qaz"
-    },
-    {
-      "id": 5,
-      "email": "marziehmonshizade@yahoo.com",
-      "fullName": "q",
-      "userName": "q",
-      "password": "q"
-    },
-    {
-      "id": 6,
-      "email": "mertramazandemir@yahoo.com",
-      "fullName": "fero",
-      "userName": "marzi",
-      "password": "13f78"
-    },
-    {
       "email": "feritkorhan@yahoo.com",
       "fullName": "feritkorhan",
       "userName": "fero",
@@ -135,10 +114,31 @@
     },
     {
       "email": "marziehmonshizade@yahoo.com",
-      "fullName": "111111111111",
-      "userName": "111111111111111",
+      "fullName": "1111111111",
+      "userName": "1111111111",
       "password": "11111111111111111111",
-      "id": 20
+      "id": 21
+    },
+    {
+      "email": "mohamadmonshizade@gmail.com",
+      "fullName": "yesbe",
+      "userName": "kivanc",
+      "password": "12345678",
+      "id": 22
+    },
+    {
+      "email": "marziehmonshizade@yahoo.com",
+      "fullName": "2222222222",
+      "userName": "222222222222222",
+      "password": "2222222222222",
+      "id": 23
+    },
+    {
+      "email": "barbarous@yahoo.com",
+      "fullName": "barbarous",
+      "userName": "barboo",
+      "password": "12345678",
+      "id": 25
     }
   ],
   "posts": [
@@ -146,165 +146,162 @@
       "userName": "Marzieh",
       "caption": "milano",
       "imgUrl": "https://galeriemagazine.com/wp-content/uploads/2019/04/Lubar-1920x1200.jpg",
-      "id": 1
+      "id": 12
     },
     {
       "userName": "Razieh",
       "caption": "i am a acounting",
       "imgUrl": "https://www.dorchestercollection.com/wp-content/uploads/Hotel-Eden-Roma-Il-Giardino-Ristorante-Breakfast-1920x840.jpg",
-      "id": 2
+      "id": 11
     },
     {
       "userName": "Mohammad Reza",
       "caption": "i am a acounting",
       "imgUrl": "https://www.nhow-hotels.com/assets/uploads/sites/18/20230601151705/nhow_Milano_Hotel_Facilities_Terrace_Vertigo_Night_Front-Ad-Hoc-Preset-1-1840x1228-1.jpg",
-      "id": 3
+      "id": 10
     },
     {
       "userName": "Roghiye",
       "caption": "i am a doctor",
       "imgUrl": "https://www.bellacollina.com/hubfs/Real%20Estate/Custom%20Built%20Homes.jpg",
-      "id": 4
+      "id": 9
     },
     {
       "userName": "Mehdi",
       "caption": "i am a management",
       "imgUrl": "https://img.i-scmp.com/cdn-cgi/image/fit=contain,width=1098,format=auto/sites/default/files/styles/1200x800/public/d8/images/canvas/2023/02/27/fb96d23e-f79e-4121-83b3-10842f47fccb_3b634be7.jpg?itok=L3DyEneC&v=1677470945",
-      "id": 5
+      "id": 8
     },
     {
       "userName": "Joe",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://www.rantapallo.fi/wp-content/uploads/2019/08/italia-milano-katedraali-duomo-ss.jpg",
-      "id": 6
+      "id": 7
     },
     {
       "userName": "Adriena",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://cache.marriott.com/content/dam/marriott-renditions/MILOL/milol-dining-0003-hor-wide.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1336px:*",
-      "id": 7
+      "id": 6
     },
     {
       "userName": "Leo",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://d1ralsognjng37.cloudfront.net/57de6114-7b40-4be0-8374-95ca08146e1a.jpeg",
-      "id": 8
+      "id": 5
     },
     {
       "userName": "Nalan",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://static.designmynight.com/uploads/2022/06/SAN-CARLO-IN-LEICESTER-optimised.jpg",
-      "id": 9
+      "id": 4
     },
     {
       "userName": "Mahsa",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://www.ggcatering.com/system/uploads/fae/image/asset/2954/Global_Gourmet_hp_banner_3.jpg",
-      "id": 10
+      "id": 3
     },
     {
       "userName": "Sarnaz",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://offloadmedia.feverup.com/secretibiza.co/wp-content/uploads/2018/04/27114856/ha%CC%88r-hittar-du-prisva%CC%88rd-brunch-i-stockholm.jpg",
-      "id": 11
+      "id": 2
     },
     {
       "userName": "SelenaG",
       "caption": "i am a actor. i love pitza",
       "imgUrl": "https://img.theculturetrip.com/wp-content/uploads/2019/11/kf796m.jpg",
-      "id": 12
+      "id": 1
     }
   ],
   "likes": [
     {
-      "userId": 1,
-      "postId": 1,
+      "userId": 2,
+      "postId": 11,
       "id": 1
     },
     {
-      "userId": 1,
-      "postId": 2,
+      "userId": 2,
+      "postId": 11,
       "id": 2
     },
     {
-      "userId": 1,
-      "postId": 3,
+      "userId": 2,
+      "postId": 10,
       "id": 3
     },
     {
-      "userId": 1,
-      "postId": 4,
+      "userId": 2,
+      "postId": 9,
       "id": 4
     },
     {
-      "userId": 1,
-      "postId": 5,
+      "userId": 2,
+      "postId": 12,
       "id": 5
     },
     {
-      "userId": 1,
-      "postId": 6,
+      "userId": 2,
+      "postId": 11,
       "id": 6
-    },
-    {
-      "userId": 1,
-      "postId": 7,
-      "id": 7
-    },
-    {
-      "userId": 1,
-      "postId": 8,
-      "id": 8
-    },
-    {
-      "userId": 1,
-      "postId": 1,
-      "id": 9
     }
   ],
   "saves": [],
   "comments": [
     {
       "userName": "SelenaG",
-      "text": "comment for post 1",
-      "postId": 1,
+      "text": "comment for post 12",
+      "postId": 12,
       "id": 2
     },
     {
       "userName": "mohamad",
-      "text": "comment for post 1",
-      "postId": 1,
+      "text": "comment for post 12",
+      "postId": 12,
       "id": 3
     },
     {
       "userName": "kimiya",
-      "text": "comment for post 2",
-      "postId": 2,
+      "text": "comment for post 11",
+      "postId": 11,
       "id": 4
     },
     {
       "userName": "un",
       "text": "ssss",
-      "postId": 1,
+      "postId": 10,
       "id": 5
     },
     {
       "userName": "un",
       "text": "aaaaaaaaaaaaaaaaaaaa",
-      "postId": 2,
+      "postId": 9,
       "id": 6
     },
     {
       "userName": "Unknown",
       "text": "woow that's amazing!",
-      "postId": 5,
+      "postId": 8,
       "id": 7
     },
     {
       "userName": "Unknown",
       "text": "milan:)",
-      "postId": 12,
+      "postId": 1,
       "id": 8
+    },
+    {
+      "userName": "Unknown",
+      "text": "wwwwwwww",
+      "postId": 12,
+      "id": 9
+    },
+    {
+      "userName": "Unknown",
+      "text": "i love breakfast",
+      "postId": 11,
+      "id": 10
     }
   ],
   "stories": [
@@ -420,266 +417,304 @@
       "productUrl": "https://media.jdsports.com/i/jdsports/DD1399_105_P1?$default$&w=671&&h=671&bg=rgb(237,237,237)",
       "description": "jordan shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 2,
       "productUrl": "https://img.mytheresa.com/512/512/66/jpeg/catalog/product/09/P00814812.jpg",
       "description": "valentino shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 3,
       "productUrl": "https://media.gucci.com/style/DarkGray_Center_0_0_800x800/1450218608/423559_DKHC0_1061_005_096_0000_Light-Leather-mid-heel-loafer.jpg",
       "description": "gucci shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 4,
       "productUrl": "https://images.summitmedia-digital.com/preview/images/2020/09/16/gucci-shoes-marmont.jpg",
       "description": "gucci shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 5,
       "productUrl": "https://di2ponv0v5otw.cloudfront.net/posts/2022/06/07/629f7fa4bcbb52e0486daceb/m_629f7feef0f28c593812eb73.jpg",
       "description": "gucci shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 6,
       "productUrl": "https://cdn1.jolicloset.com/img4/detail4b/2022/10/650933-1/handbags-autre-marque.jpg",
       "description": "manu ateleonr shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 7,
       "productUrl": "https://img.mytheresa.com/1094/1236/66/jpeg/catalog/product/82/P00578647.jpg",
       "description": "jimmychoo's shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 11,
       "productUrl": "https://outseason.giuseppezanotti.com/media/catalog/product/cache/5b2935ea9d761abe3428004826222796/E/9/E900179001_B_1.jpg",
       "description": "giuseppe zanotti ",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 12,
       "productUrl": "https://zimsonwatches.com/cdn/shop/products/103252.jpg?v=1622969748&width=1946",
       "description": "bulgari watch",
       "alt": "watch",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 16,
       "productUrl": "https://image.goxip.com/9xX1mSph-fe7OCkzlOkzTYrK1xo=/fit-in/500x500/filters:format(jpg):quality(80):fill(white)/https:%2F%2Fimg.mytheresa.com%2F1000%2F1000%2F95%2Fjpeg%2Fcatalog%2Fproduct%2F0e%2FP00500121.jpg",
       "description": "burberry the long chelsea heritage trench coat",
       "alt": "trenchCoat",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 17,
       "productUrl": "https://img.giglio.com/images/prodZoom/C03579.009_2.jpg",
       "description": "dolce and gabbana shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 18,
       "productUrl": "https://di2ponv0v5otw.cloudfront.net/posts/2022/06/10/62a3c83493649f2c8a22df6b/m_62a3c84292078669cee2c95d.jpg",
       "description": "ysl shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 19,
       "productUrl": "https://shop-couture.dior.ae/cdn/shop/products/1683283811_M1286ZEUP_M75E_E03_GHC_1200x1200.jpg?v=1683651945",
       "description": "dior book tote",
       "alt": "dior",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 20,
       "productUrl": "https://img.mytheresa.com/1094/1236/90/jpeg/catalog/product/0b/P00556282.jpg",
       "description": "valentino perfium",
       "alt": "perfium",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 21,
       "productUrl": "https://img.mytheresa.com/1094/1236/66/jpeg/catalog/product/74/P00590079.jpg",
       "description": "Lamborghini X Master & Dynamic : A New Collection of Luxury Range Of Headphones",
       "alt": "Lamborghini",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 22,
       "productUrl": "https://img.huntstreet.com/uploads/product/images/000/745/828/large/front-image.jpeg",
       "description": "coco chanel perfium",
       "alt": "perfium",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 23,
       "productUrl": "https://lzd-img-global.slatic.net/g/p/c46905d0543d387737cfae8cd646f7c9.jpg_720x720q80.jpg",
       "description": "CHRISTIAN Hair Accessories",
       "alt": "Accessories",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 24,
       "productUrl": "https://www.aquazzura.com/eshop/pub/media/catalog/product/P/P/PPLHIGS0-WNL-NPR_01_amazon.jpg",
       "description": "J'adore | Dior CA 210.000$",
       "alt": "perfium",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 25,
       "productUrl": "https://amsterdamvintagewatches.com/wp-content/uploads/attachments//Crash-9.jpg",
       "description": "cartier watch",
       "alt": "watch",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 27,
       "productUrl": "https://www.luxafrique.boutique/cdn/shop/products/8BP129AL9EF03HW_01.jpg?v=1659617922",
       "description": "bangle",
       "alt": "bangle",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 26,
       "productUrl": "https://www.cartier.com/variants/images/44733502651456361/img1/w960.jpg",
       "description": "The cartier santos",
       "alt": "watch",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 28,
       "productUrl": "https://media.karousell.com/media/photos/products/2023/3/15/cartier_glasses_1678857733_e652b89b_progressive",
       "description": "cartier glasses",
       "alt": "glasses",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 29,
       "productUrl": "https://media.tiffany.com/is/image/Tiffany/EcomItemL2/tiffany-hardwearlink-earrings-38087983_987052_ED.jpg",
       "description": "tiffany earings",
       "alt": "earings",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 30,
       "productUrl": "https://asset.swarovski.com/images/$size_1450/t_swa103/b_rgb:ffffff,c_scale,dpr_3.0,f_auto,w_500/5661905_png/aquazzura-aura-sandal--soft-gold-tone-swarovski-5661905.png",
       "description": "tiffany",
       "alt": "tiffany",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 31,
       "productUrl": "https://images.tokopedia.net/img/cache/700/hDjmkQ/2022/4/15/3b2c1b0e-c892-4274-bcd4-aec226c00b37.jpg",
       "description": "Parfum Wanita Original Delina Royal Essence Pink 75ml",
       "alt": "Parfum",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 32,
       "productUrl": "https://cdn1.jolicloset.com/imgr/full/2022/09/621565-1/black-leather-bvlgari-bulgari-serpenti-forever-shoulder-bag-291050-handbags.jpg",
       "description": "BULGARI SERPENTI FOREVER SHOULDER BAG Black Leather",
       "alt": "BULGARI",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 33,
       "productUrl": "https://i01.sozcucdn.com/wp-content/uploads/2017/09/serpenti-necklaces-bvlgari-350680-e-1_v01.jpg",
       "description": "BULGARI",
       "alt": "BULGARI",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 34,
       "productUrl": "https://di2ponv0v5otw.cloudfront.net/posts/2023/05/08/6459db08027427e7566544cd/m_6459dc4681078ae9148360c8.jpeg",
       "description": "gucci earings",
       "alt": "earings",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 35,
       "productUrl": "https://fabon5th.com/cdn/shop/products/23_1ee265fc-74f7-48db-baf5-8b8b94b2d6c4_1445x.jpg?v=1678307254",
       "description": "Van Cleef 925 Sterling Silver Bracelet",
       "alt": "Bracelet",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 36,
       "productUrl": "https://img.ltwebstatic.com/images3_pi/2022/06/30/1656557753168eb5369516f0921b144bf958d90bee_thumbnail_336x.webp",
       "description": "Shein bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 38,
       "productUrl": "https://www.dior.com/couture/ecommerce/media/catalog/product/M/j/1686224722_M0455CTZQ_M928_E01_GH.jpg",
       "description": "Luxury women's jimmychoo's shoes",
       "alt": "shoes",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 39,
       "productUrl": "https://static.purseblog.com/images/2021/08/Fendi-First-Bags-2.jpg",
-      "description": "Luxury women's jimmychoo's shoes",
-      "alt": "sunglassess",
-      "price": "100 $"
+      "description": "Fendi First bag",
+      "alt": "bag",
+      "price": 4290000,
+      "quantity": 0
     },
     {
       "id": 8,
       "productUrl": "https://prod-images.fashionphile.com/large/b0ac87d2891a923fc7234607198c4da6/d86002fcd47b129295df19da4f194c6a.jpg",
       "description": "dolce and gabbana bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 9,
       "productUrl": "https://theglamandglitter.com/wp-content/uploads/2021/10/Valentino-Bag-Sign.jpg",
       "description": "valentino white bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 10,
       "productUrl": "https://ca-times.brightspotcdn.com/dims4/default/48b1852/2147483647/strip/true/crop/2048x1854+0+0/resize/1200x1086!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6b%2F35%2F5fc32edac234c3c1e23d995a7f6b%2Fla-ar-birkin-bag-20150729-001",
       "description": "hermes bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 13,
       "productUrl": "https://www.bulgari.com/on/demandware.static/-/Sites-masterCatalog/default/dw709b813b/images/images/1260577.png",
       "description": "bulgari ring",
       "alt": "ring",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 14,
       "productUrl": "https://cdn.modesens.com/media/143605267?w=400",
       "description": "fendi bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     },
     {
       "id": 15,
       "productUrl": "https://www.christies.com/media-library/images/features/articles/2021/06/04/hermes-diamond-bags/hermes-diamond-hero.jpg",
       "description": "hermes bag",
       "alt": "bag",
-      "price": "100 $"
+      "price": 100,
+      "quantity": 0
     }
   ]
 }
