@@ -4,10 +4,12 @@ import LazyLoadImage from "../../components/lazyLoadImg/lazyLoadImg";
 import { AddCart } from "../../redux/store/shopping/cart";
 import { getProductsFromServer } from "../../redux/store/shopping/products";
 const Store = () => {
+  const isItemExist = (itemToFindId) => {
+    return cart.findIndex((item) => item.id === itemToFindId) === -1;
+  };
   const products = useSelector((state) => state.products);
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  // console.log("products = ", products);
-
   useEffect(() => {
     dispatch(getProductsFromServer("/products"));
   }, []);
@@ -26,12 +28,14 @@ const Store = () => {
               />
               <div className="card-body">
                 <p className="card-text">{product.description} </p>
-                <div className="d-flex justify-content-between align-items-center mt-2">
+                <div className="d-flex justify-content-between align-items-center g-5 mt-2">
                   <button
                     type="button"
                     className="btn btn-outline-dark"
+                    disables={() => isItemExist(product.id)}
                     onClick={() => {
                       dispatch(AddCart(product));
+                      isItemExist(product.id);
                     }}
                   >
                     add to cart
@@ -43,7 +47,6 @@ const Store = () => {
               </div>
             </div>
           </div>
-          //   <Product key={product.id} {...product}/>
         ))}
       </section>
     </>
