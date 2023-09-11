@@ -22,7 +22,7 @@ import {
 } from "../../redux/store/posts/likes";
 import "./post.css";
 
-function Post({ userName, caption, imgUrl, id }) {
+const Post = ({ userName, caption, imgUrl, id, liked }) => {
   // states
   const [like, setLike] = useState(true);
   const [save, setSave] = useState(true);
@@ -124,33 +124,42 @@ function Post({ userName, caption, imgUrl, id }) {
         <div className="d-flex justify-content-between mt-1">
           {/* like comment sant icons*/}
           <div className="d-flex gap-2">
-            <FaRegHeart
-              className={like ? "d-block" : "d-none"}
-              onClick={() => {
-                console.log("ghalb adi raft");
-                dispatch(
-                  addLikesFromServer({
-                    userId: users.id,
-                    postId: id,
-                  })
-                );
-                setLike(!like);
-              }}
-            />
-            <FaHeart
-              className={!like ? "heart d-block zoom-in-zoom-out" : "d-none"}
-              onClick={() => {
-                console.log("ghalb ghermez raft");
-                dispatch(
-                  removeLikesFromServer(
-                    12
-                    // { userId: 1,
-                    // postId: id,}
-                  )
-                );
-                setLike(!like);
-              }}
-            />
+            {liked ? (
+              <></>
+            ) : (
+              <FaRegHeart
+                className={like ? "d-block" : "d-none"}
+                onClick={() => {
+                  console.log("like");
+                  dispatch(
+                    addLikesFromServer({
+                      userId: users.id,
+                      postId: id,
+                    })
+                  );
+                  setLike(!like);
+                }}
+              />
+            )}
+
+            {liked ? (
+              <FaHeart className="heart" />
+            ) : (
+              <FaHeart
+                className={!like ? "heart d-block zoom-in-zoom-out" : "d-none"}
+                onClick={() => {
+                  console.log("unlike");
+                  dispatch(
+                    removeLikesFromServer({
+                      userId: users.id,
+                      postId: id,
+                    })
+                  );
+                  setLike(!like);
+                }}
+              />
+            )}
+
             <FaRegComment
               className={showCommentInput ? "zoom-in-zoom-out" : ""}
               onClick={() => setShowCommentInput((prev) => !prev)}
@@ -235,6 +244,6 @@ function Post({ userName, caption, imgUrl, id }) {
       </div>
     </div>
   );
-}
+};
 
 export default Post;

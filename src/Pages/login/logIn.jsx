@@ -1,12 +1,11 @@
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { BsApple, BsGooglePlay } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 import registerSchema from "../../Validations/loginRegister";
-import LogoImg from "../../components/responsiveLogo/responsiveLogo";
-
-import { BsApple, BsGooglePlay } from "react-icons/bs";
+import InstagramLogo from "../../components/instagramLogo/instagramLogo";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,11 +18,12 @@ const LogIn = () => {
   const navigate = useNavigate();
   // const abortController = new AbortController();
   const dispatch = useDispatch();
+  const { userName } = useSelector((state) => state.users);
 
   const form = useFormik({
     initialValues: {
-      name: "",
-      password: "",
+      name: "Marzieh",
+      password: "123456789",
     },
     onSubmit: (values, { setSubmitting }) => {
       console.log("Form Inputs Data =>", values);
@@ -35,41 +35,9 @@ const LogIn = () => {
           `/users?userName=${values.name}&&password=${values.password}`
         )
       );
-
-      // apiRequests
-      //   .get(
-      //     "/users",
-      //     { values }
-      //     // {signal: abortController.setTimeout(0),}
-      //   )
-      //   .then((res) => {
-      //     const result = lodash.filter(res.data, {
-      //       userName: values.name,
-      //       password: values.password,
-      //     });
-      //     console.log(res.data);
-      //     console.log(result.length);
-      //     if (result.length > 0) {
-      //       swal({
-      //         title: `Dear ${values.name} welcome to instagram :)`,
-      //         text: "You clicked the button!",
-      //         icon: "success",
-      //         button: "ok!",
-      //       });
-      //       setTimeout(() => navigate("/main"), 5000);
-      //     } else {
-      //       alert(`not found ${values.name} user , please  sign up `);
-      //       setSubmitting(false);
-      //     }
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //     alert("Failed :" + err.message);
-      //   });
     },
     validationSchema: registerSchema,
   });
-  const { userName } = useSelector((state) => state.users);
   // redirect authenticated user to home page
   useEffect(() => {
     if (userName) {
@@ -93,7 +61,7 @@ const LogIn = () => {
         onSubmit={form.handleSubmit}
         className="col-lg-6 col-md-5 col-10 mx-auto cart-style p-4 px-5 clearfix"
       >
-        <LogoImg />
+        <InstagramLogo />
         <div className="d-flex flex-column cart-body gap-2 text-center mt-5">
           <div className="form-floating text-muted">
             <input
