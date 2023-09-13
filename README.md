@@ -51,6 +51,7 @@ You can :
 ## Screenshots
 
 ![Example screenshot](./img/screenshot.png)
+![Example screenshot](./src/assets/screenshots/welcomePg.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
