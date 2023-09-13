@@ -49,9 +49,12 @@ You can :
 - View about Instagram on the 'About Me' page
 
 ## Screenshots
-
-![Example screenshot](./img/screenshot.png)
 ![Example screenshot](./src/assets/screenshots/welcomePg.png)
+![Example screenshot](./src/assets/screenshots/mainPg.png)
+![Example screenshot](./src/assets/screenshots/shopPg.png)
+![Example screenshot](./src/assets/screenshots/signupPg.png)
+![Example screenshot](./src/assets/screenshots/loginPg.png)
+![Example screenshot](./src/assets/screenshots/createPostPg.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
 
