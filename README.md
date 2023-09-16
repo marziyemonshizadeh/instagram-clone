@@ -50,15 +50,15 @@ You can :
 
 ## Screenshots
 ![Example screenshot](./src/assets/screenshots/welcomePg.png)
-home page:
+##home page:
 ![Example screenshot](./src/assets/screenshots/mainPg.png)
-shop page:
+##shop page:
 ![Example screenshot](./src/assets/screenshots/shopPg.png)
-signup page:
+##signup page:
 ![Example screenshot](./src/assets/screenshots/signupPg.png)
-login page:
+##login page:
 ![Example screenshot](./src/assets/screenshots/loginPg.png)
-create post page:
+##create post page:
 ![Example screenshot](./src/assets/screenshots/createPostPg.png)
 
 <!-- If you have screenshots you'd like to share, include them here. -->
