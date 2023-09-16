@@ -3,9 +3,8 @@
 I created this project with vite
 This project is a simulation of the famous Instagram website.
 
-> Live demo [[https://instagram-clone.iran.liara.run](https://jsonserver-instagram-clone.iran.liara.run)]
+> Live demo [[https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)]
 ## Technologies Used
-[https://jsonserver-instagram-clone.iran.liara.run]
 
 - html
 - css
