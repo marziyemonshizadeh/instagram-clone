@@ -50,6 +50,8 @@ const Post = ({ userName, caption, imgUrl, id, liked }) => {
     }).then((result) => {
       if (result) {
         dispatch(removePostsFromServer(id));
+        console.log("i wanna delet post id = ", id);
+        setDrapDown(false);
         swal({
           title: "The post has been successfully deleted:)",
           icon: "success",
@@ -89,7 +91,6 @@ const Post = ({ userName, caption, imgUrl, id, liked }) => {
             data-bs-toggle="dropdown"
             onClick={() => {
               setDrapDown((prev) => !prev);
-              console.log(drapDown);
             }}
           >
             <TfiMoreAlt className="me-2" />
