@@ -1,3 +1,6 @@
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/y/marziyemonshizadeh/instagram-clone)
+![GitHub language count](https://img.shields.io/github/languages/count/marziyemonshizadeh/instagram-clone)
+
 # instagram-clone
 
 I created this project with vite
@@ -6,14 +9,16 @@ This project is a simulation of the famous Instagram website.
 > Live demo [[https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)]
 ## Technologies Used
 
-- html
-- css
-- bootstrap - version 5
-- react
-- redux
-- react-redux
-- redux-toolkit
-- axios
+
+- html ![Static Badge](https://img.shields.io/badge/HTML-red)
+- css ![Static Badge](https://img.shields.io/badge/CSS-blue)
+- bootstrap - version 5 ![Static Badge](https://img.shields.io/badge/Bootstrap5-green)
+- Javascript ![Static Badge](https://img.shields.io/badge/Javascript-yellow)
+- react ![Static Badge](https://img.shields.io/badge/React-blue)
+- redux ![Static Badge](https://img.shields.io/badge/Redux-purple)
+- react-redux ![Static Badge](https://img.shields.io/badge/React_Redux-purple)
+- redux-toolkit ![Static Badge](https://img.shields.io/badge/Redux_toolkit-purple)
+- axios ![Static Badge](https://img.shields.io/badge/axios-pink)
 
 ## Packages Used
 
