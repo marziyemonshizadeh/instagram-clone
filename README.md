@@ -38,6 +38,7 @@ This project is a simulation of the famous Instagram website.
 You can :
 
 - log in
+- sso
 - log out
 - sign up
 - delete account
