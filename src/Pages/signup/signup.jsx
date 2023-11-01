@@ -1,7 +1,11 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import {
+  FacebookLoginButton,
+  GoogleLoginButton,
+} from "react-social-login-buttons";
 import registerSchema from "../../Validations/signUpRegister";
 import InstagramLogo from "../../components/instagramLogo/instagramLogo";
 
@@ -9,7 +13,6 @@ import InstagramLogo from "../../components/instagramLogo/instagramLogo";
 import { useDispatch } from "react-redux";
 import { addUsersFromServer } from "../../redux/store/users/users";
 import "./signup.css";
-
 const SignUp = () => {
   // axios cancelling
   const abortController = new AbortController();
@@ -37,8 +40,32 @@ const SignUp = () => {
     validationSchema: registerSchema,
   });
   // useEffect(() => {
-  //   setTimeout(() => navigate("/main"), 3000);
-  // });
+  //   window.google.accounts.id.initialize({
+  //     client_id:
+  //       "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
+  //     callback: (response) => {
+  //       console.log("Response =>", response.credential);
+  //     },
+  //   });
+
+  //   window.google.accounts.id.renderButton(document.querySelector(".sign-in"), {
+  //     theme: "outline",
+  //     size: "large",
+  //   });
+  // }, []);
+  useEffect(() => {
+    google.accounts.id.initialize({
+      client_id:
+        "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
+      callback: (response) => {
+        console.log("Response =>", response.credential);
+      },
+    });
+    google.accounts.id.renderButton(document.querySelector(".sign-in"), {
+      theme: "outline",
+      size: "large",
+    });
+  }, []);
   return (
     <div className="text-center px-4 py-4 clr">
       <form
@@ -47,19 +74,10 @@ const SignUp = () => {
       >
         <InstagramLogo />
         <div className="d-flex flex-column gap-2 text-center">
-          <button className="btn btn-primary mt-2 fw-bold" type="button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              className="bi bi-facebook me-2"
-              viewBox="0 0 16 16"
-            >
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-            </svg>
-            <span>Log in with Facebook</span>
-          </button>
+          <FacebookLoginButton onClick={() => alert("Hello")} />
+          <GoogleLoginButton onClick={() => alert("Hello")} />
+          <div className="sign-in"></div>
+
           <div className="articles_txt">or</div>
           <div className="form-floating text-muted">
             <input
@@ -83,13 +101,13 @@ const SignUp = () => {
               type="text"
               name="fullName"
               className="form-control form-style"
-              id="floatingInput"
+              id="floatingInput2"
               placeholder="12345678"
               value={form.values.fullName}
               onChange={form.handleChange}
               onBlur={form.handleBlur}
             />
-            <label htmlFor="floatingInput">Full Name</label>
+            <label htmlFor="floatingInput2">Full Name</label>
           </div>
           {form.errors.fullName && form.touched.fullName && (
             <div className="text-danger">{form.errors.fullName}</div>
@@ -100,13 +118,13 @@ const SignUp = () => {
               type="text"
               name="userName"
               className="form-control form-style"
-              id="floatingInput"
+              id="floatingInput3"
               placeholder="12345678"
               value={form.values.userName}
               onChange={form.handleChange}
               onBlur={form.handleBlur}
             />
-            <label htmlFor="floatingInput">UserName</label>
+            <label htmlFor="floatingInput3">UserName</label>
           </div>
           {form.errors.userName && form.touched.userName && (
             <div className="text-danger">{form.errors.userName}</div>
@@ -117,13 +135,13 @@ const SignUp = () => {
               type="password"
               name="password"
               className="form-control form-style"
-              id="floatingInput"
+              id="floatingInput4"
               placeholder="12345678"
               value={form.values.password}
               onChange={form.handleChange}
               onBlur={form.handleBlur}
             />
-            <label htmlFor="floatingInput">Password</label>
+            <label htmlFor="floatingInput4">Password</label>
           </div>
           {form.errors.password && form.touched.password && (
             <div className="text-danger">{form.errors.password}</div>

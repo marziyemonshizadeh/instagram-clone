@@ -7,7 +7,10 @@ export const getPostsFromServer = createAsyncThunk(
   async (url) => {
     return apiRequests
       .get(url)
-      .then((res) => res.data)
+      .then((res) => {
+        console.log("get post called");
+        return res.data;
+      })
       .catch((err) => {
         swal({
           title:
@@ -32,7 +35,7 @@ export const addPostsFromServer = createAsyncThunk(
     return apiRequests
       .post("/posts/", values)
       .then((res) => {
-        console.log(res);
+        console.log("add post successfully", res);
       })
       .catch((error) => {
         console.log("can't add post:(", error);
@@ -53,7 +56,7 @@ const slice = createSlice({
     }),
       builder.addCase(removePostsFromServer.fulfilled, (state, action) => {
         // console.log("state remove fulfilled :",state);
-        // console.log("action remove fulfilled:",action.payload.data);
+        console.log("action remove fulfilled:", action.payload.data);
         const newPosts = state.filter((post) => post.id !== action.meta.arg);
         return newPosts;
       }),
