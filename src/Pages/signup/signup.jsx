@@ -48,8 +48,6 @@ const SignUp = () => {
         "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
       callback: (response) => {
         const payload = jwtDecode(response.credential);
-        console.log(payload.name);
-        console.log(payload.sub);
         dispatch(
           getUsersFromServer(
             `/users?userName=${payload.name}&&password=${payload.sub}`
@@ -62,6 +60,8 @@ const SignUp = () => {
       theme: "outline",
       size: "large",
     });
+    //show all email address
+    google.accounts.id.prompt();
   }, []);
   return (
     <div className="text-center px-4 py-4 clr">
@@ -71,8 +71,8 @@ const SignUp = () => {
       >
         <InstagramLogo />
         <div className="d-flex flex-column gap-2 text-center">
-          <FacebookLoginButton onClick={() => alert("Hello")} />
-          <GoogleLoginButton onClick={() => alert("Hello")} />
+          <FacebookLoginButton />
+          <GoogleLoginButton />
           <div className="sign-in"></div>
 
           <div className="articles_txt">or</div>
