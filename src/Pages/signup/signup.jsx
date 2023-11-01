@@ -1,6 +1,8 @@
 import { useFormik } from "formik";
+import { jwtDecode } from "jwt-decode";
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getUsersFromServer } from "../../redux/store/users/users";
 
 import {
   FacebookLoginButton,
@@ -39,26 +41,21 @@ const SignUp = () => {
     },
     validationSchema: registerSchema,
   });
-  // useEffect(() => {
-  //   window.google.accounts.id.initialize({
-  //     client_id:
-  //       "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
-  //     callback: (response) => {
-  //       console.log("Response =>", response.credential);
-  //     },
-  //   });
 
-  //   window.google.accounts.id.renderButton(document.querySelector(".sign-in"), {
-  //     theme: "outline",
-  //     size: "large",
-  //   });
-  // }, []);
   useEffect(() => {
     google.accounts.id.initialize({
       client_id:
         "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
       callback: (response) => {
-        console.log("Response =>", response.credential);
+        const payload = jwtDecode(response.credential);
+        console.log(payload.name);
+        console.log(payload.sub);
+        dispatch(
+          getUsersFromServer(
+            `/users?userName=${payload.name}&&password=${payload.sub}`
+          )
+        );
+        setTimeout(() => navigate("/main"), 3000);
       },
     });
     google.accounts.id.renderButton(document.querySelector(".sign-in"), {
