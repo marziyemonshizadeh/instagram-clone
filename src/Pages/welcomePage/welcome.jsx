@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import LazyImg from "../../components/lazyLoadImg/lazyLoadImg";
 
@@ -7,6 +7,19 @@ import InstagramLogo from "../../assets/Instagram_Logo.png";
 import "./welcome.css";
 
 function welcome() {
+  useEffect(() => {
+    google.accounts.id.initialize({
+      client_id:
+        "187525994700-1dj6fb425s7112894fe8v2pgm6473lah.apps.googleusercontent.com",
+      callback: (response) => {
+        console.log("Response =>", response.credential);
+      },
+    });
+    google.accounts.id.renderButton(document.querySelector(".sign-in"), {
+      theme: "outline",
+      size: "large",
+    });
+  }, []);
   return (
     <div className="App">
       <header className="d-flex justify-content-center py-3">
@@ -41,6 +54,7 @@ function welcome() {
             </Link>
             videos from your friends.
           </p>
+          <div className="sign-in"></div>
 
           <button type="button" className="btn btn-primary btn-lg px-5 gap-3">
             <Link

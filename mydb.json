@@ -217,38 +217,29 @@
   ],
   "likes": [
     {
-      "userId": 2,
-      "postId": 11,
+      "userId": 1,
+      "postId": 12,
       "id": 1
     },
     {
-      "userId": 2,
-      "postId": 11,
+      "userId": 1,
+      "postId": 12,
       "id": 2
     },
     {
-      "userId": 2,
-      "postId": 10,
+      "userId": 1,
+      "postId": 11,
       "id": 3
     },
     {
-      "userId": 2,
-      "postId": 9,
+      "userId": 1,
+      "postId": 10,
       "id": 4
     },
     {
       "userId": 2,
       "postId": 12,
       "id": 5
-    },
-    {
-      "userId": 2,
-      "postId": 11,
-      "id": 6
-    },
-    {
-      "postId": 12,
-      "id": 7
     }
   ],
   "saves": [],
@@ -257,54 +248,63 @@
       "userName": "SelenaG",
       "text": "comment for post 12",
       "postId": 12,
+      "status": "false",
       "id": 2
     },
     {
       "userName": "mohamad",
       "text": "comment for post 12",
       "postId": 12,
+      "status": "false",
       "id": 3
     },
     {
       "userName": "kimiya",
       "text": "comment for post 11",
       "postId": 11,
+      "status": "false",
       "id": 4
     },
     {
       "userName": "un",
       "text": "ssss",
       "postId": 10,
+      "status": "false",
       "id": 5
     },
     {
       "userName": "un",
       "text": "aaaaaaaaaaaaaaaaaaaa",
       "postId": 9,
+      "status": "false",
       "id": 6
     },
     {
       "userName": "Unknown",
       "text": "woow that's amazing!",
       "postId": 8,
+      "status": "false",
       "id": 7
     },
     {
       "userName": "Unknown",
       "text": "milan:)",
       "postId": 1,
+      "status": "false",
       "id": 8
     },
     {
       "userName": "Unknown",
       "text": "wwwwwwww",
       "postId": 12,
+      "status": "false",
       "id": 9
     },
     {
       "userName": "Unknown",
       "text": "i love breakfast",
       "postId": 11,
+      "status": "false",
       "id": 10
     }
   ],
