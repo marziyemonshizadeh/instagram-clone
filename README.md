@@ -10,15 +10,19 @@ This project is a simulation of the famous Instagram website.
 ## Technologies Used
 
 
-- html ![Static Badge](https://img.shields.io/badge/HTML-red)
-- css ![Static Badge](https://img.shields.io/badge/CSS-blue)
-- bootstrap - version 5 ![Static Badge](https://img.shields.io/badge/Bootstrap5-green)
-- Javascript ![Static Badge](https://img.shields.io/badge/Javascript-yellow)
-- react ![Static Badge](https://img.shields.io/badge/React-blue)
-- redux ![Static Badge](https://img.shields.io/badge/Redux-purple)
-- react-redux ![Static Badge](https://img.shields.io/badge/React_Redux-purple)
-- redux-toolkit ![Static Badge](https://img.shields.io/badge/Redux_toolkit-purple)
-- axios ![Static Badge](https://img.shields.io/badge/axios-pink)
+ ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+ ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+ ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+ ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+ ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+ ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+ ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+ ![VS Code Insiders](https://img.shields.io/badge/VS%20Code%20Insiders-35b393.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+ ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+  
+- react-redux
+- redux-toolkit
+- axios
 
 ## Packages Used
 
