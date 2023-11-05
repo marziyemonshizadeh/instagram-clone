@@ -2,8 +2,8 @@ import axios from "axios";
 
 //baseurl
 const apiRequests = axios.create({
-  baseURL: " http://localhost:3001",
-  // baseURL: "https://jsonserver-instagram-clone.iran.liara.run/",
+  // baseURL: " http://localhost:3001",
+  baseURL: "https://jsonserver-instagram-clone.iran.liara.run/",
   headers: {
     "Content-Type": "application/json",
     Auth: "Bearer Token",
