@@ -6,7 +6,8 @@
 This is a REACTJS project bootstrapped with vite.
 This project is a simulation of the famous INSTAGRAM website.
 
-> Live demo [https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)
+<!-- > Live demo [https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)  -->
+> Live demo [https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app/](https://instagram-clone-g6yxm3y8y-marziehs-projects.vercel.app/)
 
 <!-- Live demo [Instagram-clone](https://instagram-clone-laydgm5gs-marziehs-projects.vercel.app) -->
 ## Technologies Used
