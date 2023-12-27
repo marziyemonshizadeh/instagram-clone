@@ -3,10 +3,12 @@
 
 # instagram-clone
 
-I created this project with vite
-This project is a simulation of the famous Instagram website.
+This is a REACTJS project bootstrapped with vite.
+This project is a simulation of the famous INSTAGRAM website.
 
-> Live demo [[https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)]
+> Live demo [https://jsonserver-instagram-clone.iran.liara.run](https://instagram-clone.iran.liara.run)
+
+<!-- Live demo [Instagram-clone](https://instagram-clone-laydgm5gs-marziehs-projects.vercel.app) -->
 ## Technologies Used
 
 
@@ -17,7 +19,6 @@ This project is a simulation of the famous Instagram website.
  ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
  ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
  ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
- ![VS Code Insiders](https://img.shields.io/badge/VS%20Code%20Insiders-35b393.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
  ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
   
 - react-redux
