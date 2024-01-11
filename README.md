@@ -72,13 +72,14 @@ You can :
 
 ## Usage
 
-1. npm install
-2. npm run dev
+1. git clone https://github.com/marziyemonshizadeh/instagram-clone.git
+2. npm i
 3. npx json-server --watch mydb.json --port 3001
+4. npm run dev
 
 ## Project Status
 
-Project is: \_in progress
+Project is: \_finished
 
 ## Contact
 
